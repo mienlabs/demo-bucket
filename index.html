@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>You're very close.</title>
+<meta name="robots" content="noindex">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="assets/favicon.ico" sizes="32x32">
+<link rel="icon" href="assets/favicons/favicon-16x16.png" sizes="16x16" type="image/png">
+<link rel="icon" href="assets/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="assets/favicons/apple-touch-icon.png">
+<style>
+  @font-face {
+    font-family: "Bitcount Grid Double";
+    src: url("assets/fonts/bitcount-grid-double-500.woff2") format("woff2");
+    font-weight: 500;
+    font-display: swap;
+  }
+  body {
+    min-height: 100svh;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    padding: 2rem 1rem;
+    box-sizing: border-box;
+    background: #000;
+    color: #e74a5f;
+    font-family: "Bitcount Grid Double", monospace;
+    font-weight: 500;
+    text-align: center;
+  }
+  .hero {
+    width: auto;
+    height: min(62vh, 520px);
+    max-width: 100%;
+    object-fit: contain;
+  }
+  p {
+    margin: 0;
+    max-width: 60ch;
+    font-size: clamp(0.8rem, 2.6vw, 1.1rem);
+    line-height: 1.6;
+    letter-spacing: 0.06em;
+    text-wrap: balance;
+  }
+  .help {
+    margin: 0;
+    font-size: clamp(0.7rem, 2.2vw, 0.9rem);
+    opacity: 1;
+  }
+  .wordmark {
+    width: clamp(90px, 14vw, 140px);
+    height: auto;
+  }
+  .hero, .wordmark {
+    -webkit-user-drag: none;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    pointer-events: none;
+  }
+</style>
+</head>
+<body>
+  <picture>
+    <source type="image/avif" sizes="(max-width: 480px) 88vw, 350px"
+      srcset="assets/avif/stop-digging-400.avif 400w,
+              assets/avif/stop-digging-800.avif 800w,
+              assets/avif/stop-digging-1027.avif 1027w">
+    <img class="hero" src="assets/webp/stop-digging-800.webp" width="1027" height="1532"
+      sizes="(max-width: 480px) 88vw, 350px"
+      srcset="assets/webp/stop-digging-400.webp 400w,
+              assets/webp/stop-digging-800.webp 800w,
+              assets/webp/stop-digging-1027.webp 1027w"
+      fetchpriority="high" draggable="false"
+      alt="A feminine character kneeling in a moonlit desert, holding a magnifying glass over a key half-buried in the sand.">
+  </picture>
+  <p>You found the key, but not the door.<br>
+     Please visit your assigned path using the complete URL provided for your project.</p>
+  <p class="help">Need help? Let us know however you're already in touch with us.</p>
+  <img class="wordmark" src="assets/mien-wm.svg" width="1020" height="336" alt="Mien" draggable="false">
+  <script>
+    document.querySelectorAll('.hero, .wordmark').forEach(function (el) {
+      el.addEventListener('dragstart', function (e) { e.preventDefault(); });
+    });
+  </script>
+  <script src="internals/output.js" defer></script>
+</body>
+</html>
