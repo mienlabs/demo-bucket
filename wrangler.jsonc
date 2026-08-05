@@ -1,0 +1,22 @@
+{
+	"$schema": "./node_modules/wrangler/config-schema.json",
+	"name": "demo-bucket",
+	"main": "worker/index.js",
+	"compatibility_date": "2026-08-05",
+	"r2_buckets": [
+		{
+			"binding": "supplier",
+			"bucket_name": "demonstrations"
+		}
+	],
+	"routes": [
+		{
+			"pattern": "demo.mien.works",
+			"custom_domain": true
+		}
+	],
+	"observability": {
+		"enabled": true,
+		"head_sampling_rate": 1
+	}
+}
