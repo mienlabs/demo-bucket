@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Currently being welded together.</title>
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#0f0f0e">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/assets/favicon.ico" sizes="32x32">
+<link rel="icon" href="/assets/favicons/favicon-16x16.png" sizes="16x16" type="image/png">
+<link rel="icon" href="/assets/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/assets/favicons/apple-touch-icon.png">
+<style>
+  @font-face {
+    font-display: swap;
+    font-family: "Geist";
+    font-style: normal;
+    font-weight: 400;
+    src: url("/assets/fonts/geist/static/geist-latin-400-normal.woff2") format("woff2");
+  }
+
+  @font-face {
+    font-display: swap;
+    font-family: "Bricolage Grotesque";
+    font-style: normal;
+    font-weight: 500;
+    src: url("/assets/fonts/bricolage-grotesque/static/bricolage-grotesque-latin-500-normal.woff2") format("woff2");
+  }
+
+  :root {
+    --color-canvas: #10100D;
+    --color-ink: #c7c0b2;
+    --font-display: "Bricolage Grotesque", sans-serif;
+    --font-interface: "Geist", sans-serif;
+    --width-column: 901px;
+    --width-scene: 840px;
+    color-scheme: dark;
+  }
+
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  body {
+    background: var(--color-canvas);
+    color: var(--color-ink);
+    font-family: var(--font-interface);
+    margin: 0;
+    overflow-x: hidden;
+  }
+
+  .stage {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    min-height: 100svh;
+    padding:
+      clamp(2rem, 7vh, 4.7rem)
+      max(1.5rem, env(safe-area-inset-right))
+      0
+      max(1.5rem, env(safe-area-inset-left));
+  }
+
+  .intro {
+    width: min(var(--width-column), 100%);
+  }
+
+  .brand_mark {
+    display: block;
+    height: auto;
+    margin-bottom: clamp(0.5rem, 1.5vh, 1rem);
+    width: clamp(44px, 3.2vw, 62px);
+  }
+
+  h1 {
+    font-size: clamp(1.75rem, 2.6vw, 3.125rem);
+    font-family: var(--font-display);
+    font-weight: 500;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+    margin: 0 0 clamp(0.5rem, 1.2vh, 0.85rem);
+    text-wrap: balance;
+  }
+
+  p {
+    font-size: clamp(1rem, 1.35vw, 1.625rem);
+    line-height: 1.45;
+    margin: 0;
+    max-width: 30em;
+    text-wrap: pretty;
+  }
+
+  .welding_scene {
+    display: block;
+    height: auto;
+    margin-top: auto;
+    max-height: 62svh;
+    object-fit: contain;
+    width: min(var(--width-scene), 92vw);
+  }
+
+  .brand_mark,
+  .welding_scene {
+    pointer-events: none;
+    user-select: none;
+    -webkit-user-select: none;
+  }
+</style>
+</head>
+<body>
+  <main class="stage">
+    <div class="intro">
+      <img class="brand_mark" src="/assets/branding/logo.svg" width="62" height="62" alt="Mien" draggable="false">
+      <h1>Currently being welded together.</h1>
+      <p>This website is currently being crafted behind the scenes. In the meantime, consider this a small sign that things are moving forward.</p>
+    </div>
+    <img class="welding_scene" src="/assets/webp/welding-840.webp" width="840" height="647"
+      sizes="(max-width: 720px) 92vw, 840px"
+      srcset="/assets/webp/welding-560.webp 560w,
+              /assets/webp/welding-840.webp 840w,
+              /assets/webp/welding-1680.webp 1680w"
+      fetchpriority="high" draggable="false"
+      alt="Two welders in protective hoods joining a steel frame, lit only by the spark between them.">
+  </main>
+</body>
+</html>
